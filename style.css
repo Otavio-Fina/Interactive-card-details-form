@@ -60,6 +60,7 @@ figure {
     width: 100px;
     left: 50%;
     padding-left: 110px;   
+    z-index: 3;
 }
 
 #cartao-cinza {
@@ -80,7 +81,7 @@ figure {
     box-sizing: border-box;
     padding: 15px;
     left: 50%;
-    
+    z-index: 3;
     
 }
 
@@ -96,4 +97,163 @@ figure {
 
 #card-name {
     float: left;
+}
+
+
+
+
+
+/*  FORMS   */
+
+
+
+main {
+    width: 400px;
+    display: grid;
+    margin: 70px auto;
+}
+
+label {
+    color: hsl(278, 68%, 11%);
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.form-control {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.form-control::placeholder {
+    color: hsl(270, 3%, 87%);
+}
+
+.btn {
+    color: white;
+    background-color: hsl(278, 68%, 11%);
+    height: 50px;
+    width: 100%;
+}
+
+.btn:hover {
+    color: white;
+    background-color: hsl(278, 68%, 19%);
+}
+
+.btn:active {
+    background-color: hsl(278, 68%, 25%);
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0 ;
+}
+
+.form-control:focus {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 0;
+}
+
+#cvc-form-span {
+    float: right;
+    padding-right: 149px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#div-col-1 {
+    padding-right: 5px;
+}
+
+#div-col-2 {
+    padding: 0;
+}
+
+#div-col-3 {
+    padding-left: 15px;
+}
+
+
+
+/*  DESKTOP LAYOUT  */
+
+@media screen and (min-width: 1000px) { 
+
+    body {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+
+    header {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        background: white;
+        grid-column: 1/span 3;
+    }
+
+
+    
+
+    #fundo-branco-desktop, #fundo-desktop {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #fundo-desktop {
+        background: url(images/bg-main-mobile.png), purple;
+        background-size: cover;
+    }
+
+    #fundo-branco-desktop{
+        left: 50%;
+        background-color: white;
+    }
+
+    #cartao-roxo {
+        margin-top: -460px;
+        z-index: 2;
+    }
+
+    #cartao-cinza {
+        margin-bottom: 0;
+        margin-top: 350px;
+        z-index: 2;
+    }
+
+    #card-content {
+        margin-top: 134px;
+        z-index: 2;
+    }
+
+    #card-cvc {
+        margin-top: 429px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

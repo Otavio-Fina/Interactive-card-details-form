@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
@@ -17,6 +18,8 @@
 
   <header>
     <figure class="credit-card justify-content-center "> <!-- cartão cinza/grey -->
+      <div id="fundo-desktop"></div>
+      <div id="fundo-branco-desktop"></div>
       <img id="cartao-cinza" class="credit-card-img d-block  " src="images/bg-card-back.png" alt="grey card">
       <p id="card-cvc"  class="mx-auto">000</p>
       <img id="cartao-roxo" class="credit-card-img " src="images/bg-card-front.png" alt="purple card">
@@ -27,6 +30,35 @@
       </div>
     </figure>
   </header>
+  <main>
+      <form>
+        <div class="mt-5 mb-3">
+          <label for="holder-name" class="form-label">CARDHOLDER NAME</label>
+          <input id="holder-name" name="holder-name" class="form-control" type="text" placeholder="ex. Jane Appleseed" required>
+        </div>
+        <div class="mb-3">
+          <label for="card-number-form" class="form-label">CARD NUMBER</label>
+          <input id="card-number-form" name="card-number" class="form-control" type="text" placeholder="ex. 1234 5678 9123 0000" maxlength="16" required>
+        </div>
+        <div class="mb-3 row">
+          <label for="date-m" class="form-label">EXP. DATE (MM/YY) <span id="cvc-form-span">CVC</span></label>
+          <div id="div-col-1" class="col-3">
+            
+            <input id="date-m" name="date-m" class="form-control" type="text" placeholder="MM" maxlength="2" required>
+          </div>
+          <div id="div-col-2" class="col-3">
+            <input id="date-y" name="date-y" class="form-control" type="text" placeholder="YY" maxlength="2" required>
+          </div>
+          <div id="div-col-3" class="col-6">
+            
+            <input id="cvc-form" name="cvc-form" class="form-control" type="text" placeholder="ex. 123" maxlength="3" required>
+          </div>
+        </div>
+        <button class="btn" type="submit">CONFIRM</button> 
+      </form> 
+      
+  </main>
+  
 
 
 </body>
