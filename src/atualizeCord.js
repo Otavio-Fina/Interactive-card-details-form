@@ -1,8 +1,9 @@
-import React from 'react';
- 
-'use strict';
+ 'use strict';
 
-export default function atualizeCard() {
+ import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+export default function AtualizeCard() {
     function handleKeyUp(element, elementTarget) {
         return elementTarget.innerHTML = element.value
     }
@@ -37,5 +38,6 @@ export default function atualizeCard() {
    cvc.addEventListener('keydown', function() {
         handleKeyUp(cvc, cardCvc);
         })
-    document.getElementsByTagName('main').style.background = 'red'
+
+        return null
 }
