@@ -23,19 +23,19 @@ export default function AtualizeCard() {
     
 
     
-    nome.addEventListener('keydown', function() {
+    nome.addEventListener('keyup', function() {
         handleKeyUp(nome, cardName);
         })
-    number.addEventListener('keydown', function() {
+    number.addEventListener('keyup', function() {
         handleKeyUp(number, cardNumber);
         })
-    mes.addEventListener('keydown', function() {
+    mes.addEventListener('keyup', function() {
         handleKeyUp(mes, cardMes);
         })
-    ano.addEventListener('keydown', function() {
+    ano.addEventListener('keyup', function() {
         handleKeyUp(ano, cardAno);
         })
-   cvc.addEventListener('keydown', function() {
+   cvc.addEventListener('keyup', function() {
         handleKeyUp(cvc, cardCvc);
         })
 

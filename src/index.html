@@ -34,7 +34,7 @@
     </figure>
   </header>
   <main>
-      <form>
+      <form id="main-form">
         <div class="mt-5 mb-3">
           <label for="holder-name" class="form-label">CARDHOLDER NAME</label>
           <input id="holder-name" name="holder-name" class="form-control" type="text" placeholder="ex. Jane Appleseed" required>
@@ -47,17 +47,17 @@
           <label for="date-m" class="form-label">EXP. DATE (MM/YY) <span id="cvc-form-span">CVC</span></label>
           <div id="div-col-1" class="col-3">
             
-            <input id="date-m" name="date-m" class="form-control" type="text" placeholder="MM" maxlength="2" required>
+            <input id="date-m" name="date-m" class="form-control" type="text" placeholder="MM" max="12" maxlength="2" required>
           </div>
           <div id="div-col-2" class="col-3">
-            <input id="date-y" name="date-y" class="form-control" type="text" placeholder="YY" maxlength="2" required>
+            <input id="date-y" name="date-y" class="form-control" type="text" placeholder="YY" min="23" maxlength="2" required>
           </div>
           <div id="div-col-3" class="col-6">
             
             <input id="cvc-form" name="cvc-form" class="form-control" type="text" placeholder="ex. 123" maxlength="3" required>
           </div>
         </div>
-        <button id="submit-btn" class="btn" type="submit">CONFIRM</button> 
+        <button id="submit-btn" class="btn">CONFIRM</button> 
       </form> 
       <div id="initial-root"></div>
   </main>

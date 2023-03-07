@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AtualizeCard from './atualizeCord';
+import AtualizeCard from './atualizeCard';
 import Validacao from './validation';
 
 'use strict';

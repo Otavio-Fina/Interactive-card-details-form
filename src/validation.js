@@ -3,6 +3,8 @@ import { useState } from "react";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+
+
 export default function Validacao() {
     
     const nome = document.getElementById('holder-name');
@@ -12,52 +14,72 @@ export default function Validacao() {
     const cvc = document.getElementById('cvc-form');
     const submitBtn = document.getElementById("submit-btn");
 
-    const [nomeValido, setNomeValido] = useState(null)
-    const [numberValido, setNumberValido] = useState(null)
-    const [mValido, setMValido] = useState(null)
-    const [yValido, setYValido] = useState(null)
-    const [cvcValido, setcvcValido] = useState(null)
+    const [nomeValido, setNomeValido] = useState(undefined)
+    const [numberValido, setNumberValido] = useState(undefined)
+    const [mValido, setMValido] = useState(undefined)
+    const [yValido, setYValido] = useState(undefined)
+    const [cvcValido, setcvcValido] = useState(undefined)
 
+    const [temLetra, setTemLetra] = useState(false)
 
     function validacaoLetra(value) {
-        const[temLetra, setTemLetra] = useState(false)
-        let abc = 'abcdefghijklmnopqrstuvwxyz'
-        if (temLetra == false) {      //prevents a infinite loop
-        for ( x of abc ) {
-            for ( y of value ) { if ( y == x ) {setTemLetra(current => !current)
-                 break}}
-        }
-    }   
+        let abc = 'abcdefghijklmnopqrstuvwxyz!@#$%¨&*()-_=+{[}]ºª§^~<>,.;:?/°\|"+-*'
+        let valueLower = value.toLowerCase()
+        if (!temLetra) {      //prevents a infinite loop
+            for (let x of abc ) {
+                if ( valueLower[valueLower.length - 1] == x ) {
+                    setTemLetra(() => true);
+                    var letraLocalizada = valueLower[valueLower.length - 1]
+                break;}
+            }
+        } else {
+            for (let y of value) {if ( y == letraLocalizada) {
+                setTemLetra(() => true)
+                break
+            } else {
+                setTemLetra(() => false)
+            }}
+        }  
     return {temLetra}
 
     }
 
     function validacaoNome(element, stateChanger) {
-        if (element.value == '') {stateChanger(false)} else {stateChanger(true)}
+        if (element.value == '') {stateChanger(false)
+            nome.style.border= '2px solid red'} else {stateChanger(true)
+                nome.style.border= ''}
         return null
     }
 
     function validacaoNumber(element, stateChanger) {
         let valorInvalido = validacaoLetra(element.value)
-        if (element.value == '' || element.value.lenght < 16 || valorInvalido != false) {stateChanger(false)} else {stateChanger(true)}
+        if (element.value == '' || element.value.length < 16 || valorInvalido == true) {stateChanger(false)
+            number.style.border= '2px solid red'} else {stateChanger(true)
+                number.style.border= ''}
         return null
     }
 
     function validacaoM(element, stateChanger) {
         let valorInvalido = validacaoLetra(element.value)
-        if (element.value == '' || element.value.lenght < 2 || valorInvalido != false) {stateChanger(false)} else {stateChanger(true)}
+        if (element.value == '' || element.value.length < 2 || valorInvalido == true) {stateChanger(false)
+            mes.style.border= '2px solid red'} else {stateChanger(true)
+                mes.style.border= ''}
         return null
     }
 
     function validacaoY(element, stateChanger) {
         let valorInvalido = validacaoLetra(element.value)
-        if (element.value == '' || element.value.lenght < 2 || valorInvalido != false) {stateChanger(false)} else {stateChanger(true)}
+        if (element.value == '' || element.value.length < 2 || valorInvalido == true) {stateChanger(false)
+            ano.style.border= '2px solid red'} else {stateChanger(true)
+                ano.style.border= ''}
         return null
     }
 
     function validacaoCvc(element, stateChanger) {
         let valorInvalido = validacaoLetra(element.value)
-        if (element.value == '' || element.value.lenght < 3 || valorInvalido != false) {stateChanger(false)} else {stateChanger(true)}
+        if (element.value == '' || element.value.length < 3 || valorInvalido == true) {stateChanger(false)
+            cvc.style.border= '2px solid red'} else {stateChanger(true)
+                cvc.style.border= ''}
         return null
     }
 
@@ -76,12 +98,16 @@ export default function Validacao() {
    cvc.addEventListener('keyup', function() {
         validacaoCvc(cvc, setcvcValido);
         })
+    console.log('nome valido ==' + nomeValido + 'number valido ==' + numberValido + 'm valido ==' + mValido + 'y valido ==' + yValido + 'cvc valido ==' + cvcValido)
 
-    if (nomeValido == null || numberValido == null || mValido == null || yValido == null || cvcValido == null) {
-        submitBtn.disable == true
+    if (nomeValido == undefined || numberValido == undefined || mValido == undefined || yValido == undefined || cvcValido == undefined) {
+        submitBtn.className += ' disabled'
     } else if (nomeValido == false || numberValido == false || mValido == false || yValido == false || cvcValido == false) {
-        submitBtn.disable == true
-    } else { submitBtn.disable == false }
+        submitBtn.className += ' disabled'
+    } else { submitBtn.className = 'btn' 
+    console.log('btn abled')
+}
+
 
     return null
 }
