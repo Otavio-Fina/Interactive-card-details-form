@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [http://simulador-interativo-cartao.com](http://simulador-interativo-cartao.com)
+- Github pages: [https://otavio-fina.github.io/Interactive-card-details-form/src](https://otavio-fina.github.io/Interactive-card-details-form/src)
 
 ## My process
 
