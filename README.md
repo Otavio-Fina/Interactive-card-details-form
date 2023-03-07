@@ -32,10 +32,10 @@ Users should be able to:
 
 ### Screenshot
 
-![desktop](./design/final/desktop.png "Design desktop")
-![desktop ativo](./design/final/desktop-active.png "Design desktop dos inputs ativos")
-![desktop falho](./design/final/desktop-fail.png "Design desktop dos inputs falhos")
-![mobile](./design/final/mobile.png "Design mobile")
+![desktop](./src/design/final/desktop.png "Design desktop")
+![desktop ativo](./src/design/final/desktop-active.png "Design desktop dos inputs ativos")
+![desktop falho](./src/design/final/desktop-fail.png "Design desktop dos inputs falhos")
+![mobile](./src/design/final/mobile.png "Design mobile")
 
 ### Links
 
